@@ -9,7 +9,7 @@
 Для инициализации создаём переменную типа TButton и вызываем TButtonAssign:
 
 TButton Button1;
-Button1 = TButton TButtonAssign(Button1_GPIO_Port, Button1_Pin, TBUTTON_BTYPE_NO, TBUTTON_PT_PULL_DOWN, 20, 3); 
+Button1 = TButtonAssign(Button1_GPIO_Port, Button1_Pin, TBUTTON_BTYPE_NO, TBUTTON_PT_PULL_DOWN, 20, 3); 
 
 Если кнопка не подразумевает долгое нажатие, LongTime ставим 0
 Не рекомендуется выбирать значение Confirms менее 5.
@@ -36,6 +36,6 @@ TBUTTON_STATE_LONG_PRESSED - долгое нажатие
 Если нажаты две конфликтующие кнопки, в обработчике более приоритетной релизим менее приоритетную:
 
 if (TButtonGetState (Stop_Button)==TBUTTON_STATE_CLICKED) {
-  ...
   TButtonForcedRelease(Start_Button); 
+  ...
 }
